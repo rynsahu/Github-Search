@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./home.css";
 import Input from "./common/input";
 import Submit from "./common/submit";
@@ -18,16 +19,19 @@ class Home extends React.Component {
   };
 
   render() {
+    const { query } = this.state;
     return (
       <div className="container search-container home-style">
         <h1>GitHub Search</h1>
         <form onSubmit={this.handleSubmit}>
           <Input
             placeholder="Enter username"
-            value={this.state.query}
+            value={query}
             handleChange={this.handleChange}
           />
-          <Submit label="Search" />
+          <Link to={`/${query}`}>
+            <Submit label="Search" />
+          </Link>
         </form>
       </div>
     );
