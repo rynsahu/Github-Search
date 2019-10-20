@@ -22,6 +22,12 @@ class Home extends React.Component {
     const { query } = this.state;
     return (
       <div className="container search-container home-style">
+        <img
+          src="https://github.githubassets.com/images/modules/logos_page/Octocat.png"
+          alt="GitHub search"
+          width="200px"
+          height="auto"
+        />
         <h1>GitHub Search</h1>
         <form onSubmit={this.handleSubmit}>
           <Input
